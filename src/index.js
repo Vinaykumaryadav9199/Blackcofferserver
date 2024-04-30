@@ -11,9 +11,11 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect("mongodb+srv://virtualhelp62:Virtual123@cluster0.xgumyjg.mongodb.net/Blackcoffer?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+mongoose.connect("mongodb+srv://virtualhelp62:Virtual123@cluster0.xgumyjg.mongodb.net/Blackcoffer?retryWrites=true&w=majority").then(()=>{
+
+console.log("database connected")
+}).catch(()=>{
+  console.log("db not connected")
 });
 
 // Routes
